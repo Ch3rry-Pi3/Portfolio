@@ -1,3 +1,17 @@
+"""Requirements File for Building Chatbots Using Paid & Open Source LLMs
+
+This file lists the libraries and dependencies required to run the chatbot applications in the 
+'Building Chatbots Using Paid & Open Source LLMs' project. The dependencies should be installed 
+in the Python environment (e.g., `myenv`) where the project is being executed.
+
+Installation:
+-------------
+Run the following command inside the desired environment to install all dependencies:
+
+    pip install -r requirements.txt
+"""
+
+openai
 langchain-openai
 langchain-core
 python-dotenv
