@@ -1,1 +1,11 @@
-openai_key='Enter OpenAI API here'
+"""Stores sensitive API keys and configuration constants for the application.
+
+Note:
+-----
+Do not include actual API keys when uploading this file to public repositories. 
+Replace sensitive values with placeholders (e.g., 'Enter OpenAI API here') before sharing.
+
+"""
+
+# OpenAI API key
+openai_key = 'Enter OpenAI API here'        # Replace this placeholder with your actual OpenAI API key.
