@@ -1,6 +1,3 @@
-To convert the given text file content into a markdown file, you can simply save the content with a `.md` extension and ensure that the Markdown syntax is properly formatted. Below is the content updated for Markdown compatibility:
-
-```markdown
 # LangChain and Streamlit Project
 
 ## Overview
@@ -45,6 +42,3 @@ Create a `constants.py` file in the project directory. This file should include 
 ```python
 openai_key = 'Enter OpenAI API here'
 ```
-```
-
-You can now save this content as `README.md` or any `.md` file to make it a Markdown file.
