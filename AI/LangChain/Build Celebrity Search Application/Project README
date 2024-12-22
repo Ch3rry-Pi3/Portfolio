@@ -31,7 +31,7 @@ Setup Instructions:
    After creating the environment, install the required dependencies using the `requirements.txt` file:
    - Activate the environment:
      ```
-     conda activate myenv
+     conda activate myenv/
      ```
    - Install the dependencies:
      ```
