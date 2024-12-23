@@ -9,7 +9,7 @@ This project demonstrates how to deploy Large Language Models (LLMs) as APIs usi
 
 ### 1. Set Up the Virtual Environment
 1. Open the Command Prompt (cmd) inside the project folder.
-2. Initialize Conda for your shell (if not already done):
+2. Initialise Conda for your shell (if not already done):
    ```bash
    conda init
    ```
@@ -40,7 +40,7 @@ LANGCHAIN_PROJECT="Tutorial2"
 ```
 
 ### 4. Create the `app.py` File
-This file initializes the FastAPI server. It handles requests for generating essays and poems using OpenAI's GPT models and LLAMA2. The server provides the following endpoints:
+This file initialises the FastAPI server. It handles requests for generating essays and poems using OpenAI's GPT models and LLAMA2. The server provides the following endpoints:
 - `/openai`: Uses OpenAI models.
 - `/essay`: Generates essays.
 - `/poem`: Generates poems.
