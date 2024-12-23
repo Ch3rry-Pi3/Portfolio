@@ -75,4 +75,3 @@ Navigate to the Streamlit app in your web browser. You can use it to generate es
 
 #### Poem Generation:
 ![Poem Example](images/PoemExample.png)
-```
