@@ -1,5 +1,3 @@
-Certainly! Below is the updated markdown formatted similarly to your example, with instructions for installing Ollama and downloading a model:
-
 # Building Chatbots using Paid & Open Source LLMs
 
 ## Overview
