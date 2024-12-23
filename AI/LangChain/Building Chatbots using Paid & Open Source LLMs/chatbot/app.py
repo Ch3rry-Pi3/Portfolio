@@ -110,7 +110,7 @@ def main():
     input_text = st.text_input("Enter your query:")
 
     if input_text:
-        # Initialize OpenAI LLM and output parser
+        # Initialise OpenAI LLM and output parser
         llm = ChatOpenAI(model="gpt-3.5-turbo")
         output_parser = StrOutputParser()
         chain = prompt | llm | output_parser

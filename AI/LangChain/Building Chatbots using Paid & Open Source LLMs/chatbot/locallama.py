@@ -54,8 +54,8 @@ Code Organisation:
 2. **Prompt Template**:
     - Defines a chat prompt template for the chatbot's behavior.
 
-3. **LLM Initialization**:
-    - Initializes the LLAMA2 model using LangChain's Ollama class.
+3. **LLM Initialisation**:
+    - Initialises the LLAMA2 model using LangChain's Ollama class.
 
 4. **Streamlit Interface**:
     - Accepts user input and displays the model's response interactively.
@@ -97,7 +97,7 @@ def main():
     input_text = st.text_input("Search the topic you want:")
 
     if input_text:
-        # Initialize the LLAMA2 model via LangChain
+        # Initialise the LLAMA2 model via LangChain
         llm = Ollama(model="llama2")
         output_parser = StrOutputParser()
 
