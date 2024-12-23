@@ -53,7 +53,7 @@ python app.py
 You can verify the server is running by visiting the FastAPI documentation at:
 [http://localhost:8000/docs](http://localhost:8000/docs)
 
-![FastAPI Documentation](images/Langchain%20Server.png)
+![FastAPI Documentation](images/LangchainServer.png)
 
 ### 5. Create the `client.py` File
 This file serves as the frontend for the FastAPI server. It uses Streamlit to provide a user-friendly interface for interacting with the API.
@@ -65,14 +65,14 @@ streamlit run client.py
 ```
 
 In the terminal window, you can verify the connection is established:
-![Streamlit Terminal Logs](images/Terminal%20View.png)
+![Streamlit Terminal Logs](images/TerminalView.png)
 
 ### 7. Interact with the Application
 Navigate to the Streamlit app in your web browser. You can use it to generate essays and poems:
 
 #### Essay Generation:
-![Essay Example](images/Essay%20Example.png)
+![Essay Example](images/EssayExample.png)
 
 #### Poem Generation:
-![Poem Example](images/Poem%20Example.png)
+![Poem Example](images/PoemExample.png)
 ```
