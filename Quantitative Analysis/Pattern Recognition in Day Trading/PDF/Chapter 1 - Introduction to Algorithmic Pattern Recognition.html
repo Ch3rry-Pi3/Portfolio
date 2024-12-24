@@ -7554,7 +7554,7 @@ $$<h3 id="2.2.-Patterns-"><span style="color:#4682B4"><strong>2.2. Patterns</str
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Importing required libraries</span>
@@ -7582,7 +7582,7 @@ $$<h3 id="2.2.-Patterns-"><span style="color:#4682B4"><strong>2.2. Patterns</str
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">moving_average</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">window_size</span><span class="p">):</span>
@@ -7622,7 +7622,7 @@ $$<h3 id="2.2.-Patterns-"><span style="color:#4682B4"><strong>2.2. Patterns</str
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 1: Creating a sample time series data using pandas.Series</span>
@@ -7686,7 +7686,7 @@ dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_exponential_moving_average</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">span</span><span class="p">):</span>
@@ -7726,7 +7726,7 @@ dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 1: Creating a sample time series data using pandas.Series</span>
@@ -7749,15 +7749,27 @@ dtype: float64
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0    1.000000
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Original Data:
+
+0    1
+1    2
+2    3
+3    4
+4    5
+dtype: int64
+
+Exponential Moving Average (Span = 2):
+
+0    1.000000
 1    1.666667
 2    2.555556
 3    3.518519
 4    4.506173
-dtype: float64</pre>
+dtype: float64
+</pre>
 </div>
 </div>
 </div>
@@ -7783,7 +7795,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">buy_sell_signals</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">short_window</span><span class="p">,</span> <span class="n">long_window</span><span class="p">):</span>
@@ -7837,7 +7849,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 1: Creating a sample time series data using pandas.Series</span>
@@ -7860,79 +7872,29 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Original Data:
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+0    1
+1    2
+2    3
+3    4
+4    5
+5    6
+dtype: int64
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>short_mavg</th>
-<th>long_mavg</th>
-<th>signal</th>
-<th>positions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>NaN</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-</tr>
-<tr>
-<th>1</th>
-<td>1.5</td>
-<td>NaN</td>
-<td>0</td>
-<td>0.0</td>
-</tr>
-<tr>
-<th>2</th>
-<td>2.5</td>
-<td>2.0</td>
-<td>1</td>
-<td>1.0</td>
-</tr>
-<tr>
-<th>3</th>
-<td>3.5</td>
-<td>3.0</td>
-<td>1</td>
-<td>0.0</td>
-</tr>
-<tr>
-<th>4</th>
-<td>4.5</td>
-<td>4.0</td>
-<td>1</td>
-<td>0.0</td>
-</tr>
-<tr>
-<th>5</th>
-<td>5.5</td>
-<td>5.0</td>
-<td>1</td>
-<td>0.0</td>
-</tr>
-</tbody>
-</table>
-</div>
+Buy/Sell Signals (Short Window = 2, Long Window = 3):
+
+   short_mavg  long_mavg  signal  positions
+0         NaN        NaN       0        NaN
+1         1.5        NaN       0        0.0
+2         2.5        2.0       1        1.0
+3         3.5        3.0       1        0.0
+4         4.5        4.0       1        0.0
+5         5.5        5.0       1        0.0
+</pre>
 </div>
 </div>
 </div>
@@ -7958,7 +7920,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_signals</span><span class="p">(</span><span class="n">signals</span><span class="p">):</span>
@@ -8014,7 +7976,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 1: Generating a dummy time series for demonstration</span>
