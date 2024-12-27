@@ -1,4 +1,3 @@
-```markdown
 # <span style="color:#4682B4">**Document Question-Answering with LangChain and Llama2**</span>
 
 ## Overview
@@ -83,4 +82,3 @@ print(response["answer"])
 - This project focuses on the integration of LangChain and Llama2 for advanced question-answering capabilities.
 - Ensure the `attention.pdf` document is placed in the project directory before running the notebook.
 - The notebook is modular, allowing you to customize the workflow for different documents or LLMs.
-```
