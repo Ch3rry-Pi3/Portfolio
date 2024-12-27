@@ -1,8 +1,8 @@
-"""Requirements File for Building Chatbots Using Paid & Open Source LLMs
+"""Requirements File for LangChain and Streamlit Applications
 
-This file lists the libraries and dependencies required to run the chatbot applications in the 
-'Building Chatbots Using Paid & Open Source LLMs' project. The dependencies should be installed 
-in the Python environment (e.g., `myenv`) where the project is being executed.
+This file lists the libraries and dependencies required to run the LangChain and Streamlit-based applications 
+in this project. The dependencies should be installed in the Python environment (e.g., `myenv`) where the project 
+is being executed.
 
 DELETE these comments prior to installation.
 
@@ -17,10 +17,8 @@ openai
 langchain-openai
 langchain-core
 python-dotenv
-streamlit
 langchain_community
-langserve
-fastapi
-uvicorn
-sse_starlette
-httpx==0.24.1
+bs4
+pypdf
+chromadb
+faiss-cpu
