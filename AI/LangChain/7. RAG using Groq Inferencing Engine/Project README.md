@@ -47,7 +47,7 @@ streamlit run app.py
 Navigate to the URL provided by Streamlit to interact with the application. Enter your query into the prompt field to get context-aware answers based on the loaded LangSmith documentation.
 
 Example response screen:
-![Response Example](response.png)
+![Response Example](images/response.png)
 
 ### Key Features
 1. **Embeddings and Vector Databases**:
