@@ -9,7 +9,7 @@
  * 
  * Description:
  * - The program covers:
- *   1. Declaring and initializing variables of different data types:
+ *   1. Declaring and initialising variables of different data types:
  *      - int (integer)
  *      - double (double-precision floating-point)
  *      - float (single-precision floating-point)
@@ -31,26 +31,26 @@
 
 int main() {
     
-    // Declare and initialize an integer variable
+    // Declare and initialise an integer variable
     int integer = 10;
     printf("Integer = %d", integer);
 
-    // Declare and initialize a double variable
+    // Declare and initialise a double variable
     double double1 = 12.45;
     printf("\nDouble = %lf", double1);
 
     // Print the double value with 2 decimal places
     printf("\nDouble (2 dp) = %.2lf", double1);
 
-    // Declare and initialize a float variable
+    // Declare and initialise a float variable
     float floating = 10.9f;
     printf("\nFloating point = %f", floating);
 
-    // Declare and initialize a char variable
+    // Declare and initialise a char variable
     char character = 'z';
     printf("\nCharacter = %c", character);
 
-    // Declare variables without initialization
+    // Declare variables without initialisation
     int integer2;
     double double2;
 
