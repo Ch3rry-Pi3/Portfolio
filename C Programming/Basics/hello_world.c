@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 /*
  * This program demonstrates a simple "Hello, World!" example in C.
