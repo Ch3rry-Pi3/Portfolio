@@ -7,7 +7,7 @@
  */
 
 int main() {
-    // Declare an integer variable and initialize it
+    // Declare an integer variable and initialise it
     int x = 12;
 
     // Perform addition and store the result
@@ -30,5 +30,5 @@ int main() {
     // Print the result of the BODMAS operation
     printf("BODMAS: %d", y);
 
-    return 0; // Indicate successful program execution
+    return 0; 
 }
