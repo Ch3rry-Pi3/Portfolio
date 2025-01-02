@@ -1,11 +1,11 @@
-# **Simple Dockerized Node.js Application**
+# **Simple Dockerised Node.js Application**
 
 ## **Overview**
 This project demonstrates how to build a Docker image for a basic Node.js application, run it as a container, and access it via a web browser. The application is a simple web server created using **Express.js**, which listens on port `3000` and responds with "Welcome to my awesome app!".
 
 This guide walks through:
 1. Writing the application code (`server.js`).
-2. Creating a `Dockerfile` to containerize the application.
+2. Creating a `Dockerfile` to containerise the application.
 3. Running the application in a Docker container.
 4. Testing the application in your browser.
 
@@ -29,7 +29,7 @@ app.listen(3000, function () {
 
 #### **Explanation**:
 - **Line 1**: Imports the `Express` library, which simplifies building web applications in Node.js.
-- **Line 2**: Initializes an Express application instance.
+- **Line 2**: Initialises an Express application instance.
 - **Line 4-6**: Sets up a route (`/`) that responds with "Welcome to my awesome app!" when accessed.
 - **Line 8-10**: Starts the application and listens for HTTP requests on port `3000`.
 
