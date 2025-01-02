@@ -86,7 +86,7 @@ This creates an image tagged `node-app:1.0`.
 
 **Example Output:**
 
-![Docker Image Build](images/dockerimage.png)
+![Docker Image Build](images/dockerimages.png)
 
 
 ### **Step 2: Run the Docker Container**
