@@ -51,7 +51,7 @@ Your band name could be: Paris Bella
 
 ## Additional Notes  
 
-- 🐣 This project is beginner-friendly and designed as a Day 1 project for a Python beginner.  
+- 🐣 This project is beginner-friendly and designed as a Day 1 project for practising Python basics.  
 - 🛠️ Feel free to modify the code to experiment with different outputs or add new features.  
 
 **🎉 Have fun generating your band name and starting your Python journey!** 🚀
