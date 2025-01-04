@@ -13,7 +13,7 @@ The project includes:
 
 ### 1. Set Up the Virtual Environment
 1. Open the terminal inside the project folder.
-2. Initialize Conda for your shell (if not already done):
+2. Initialise Conda for your shell (if not already done):
    ```bash
    conda init
    ```
