@@ -22,7 +22,7 @@ The project includes:
 3. **📊 ChromaDB Vector Database**: Stores and retrieves document embeddings for similarity-based searches.
 4. **🧠 Query Expansion**: Uses an LLM to generate hypothetical answers to expand the query.
 5. **❓ Question Answering**: Dynamically processes user queries with OpenAI's GPT-3.5-Turbo model.
-6. **📉 Visualization**: Visualizes embeddings in a 2D space using UMAP.
+6. **📉 Visualisation**: Visualises embeddings in a 2D space using UMAP.
 
 ## Setup Instructions
 
@@ -64,7 +64,7 @@ python advanced_query_expansion.py
 ```
 
 ### 6. Interact with the Application
-🖥️ Enter your query when prompted in the terminal to see enhanced context-aware answers and visualize embeddings.
+🖥️ Enter your query when prompted in the terminal to see enhanced context-aware answers and visualise embeddings.
 
 ## Key Features
 
@@ -102,9 +102,9 @@ python advanced_query_expansion.py
    - **Purpose**: Combines the original query with the hypothetical answer to retrieve documents and generate the final response.
    - **Output**: Context-aware answer based on relevant document chunks.
 
-### 6. **📉 Embedding Visualization**
-   - **Function**: `visualize_embeddings`
-   - **Purpose**: Visualizes document and query embeddings in a 2D space using UMAP.
+### 6. **📉 Embedding Visualisation**
+   - **Function**: `visualise_embeddings`
+   - **Purpose**: Visualises document and query embeddings in a 2D space using UMAP.
    - **Output**: Scatter plot showing dataset embeddings, query embeddings, and augmented query embeddings.
 
 ## Example Queries and Output
@@ -117,16 +117,16 @@ python advanced_query_expansion.py
 In the fiscal year ending December 31, 2021, our company recorded a total profit of $1.2 million. This represents a 15% increase compared to the previous fiscal year, where our total profit was $1 million. This growth can be attributed to our successful cost-saving initiatives and increased revenue streams.
 ```
 
-### Visualization Example
-Below is the embedding visualization generated for the query and the retrieved documents:
+### Visualisation Example
+Below is the embedding visualisation generated for the query and the retrieved documents:
 
-![Embedding Visualization](images/qexpansion_plot.png)
+![Embedding Visualisation](images/qexpansion_plot.png)
 
 ## Additional Notes
 - ⚙️ Ensure the `requirements.txt` file includes all necessary dependencies for OpenAI, ChromaDB, and dotenv.
 - 🔒 The `.env` file should be placed in the root directory for secure API key management.
 - 📜 Use high-quality PDF documents to ensure accurate and relevant results.
-- ✂️ Customize the `chunk_size` and `tokens_per_chunk` parameters based on the document size and application requirements.
+- ✂️ Customise the `chunk_size` and `tokens_per_chunk` parameters based on the document size and application requirements.
 
 ---
 **For further inquiries or enhancements, please contact the project maintainer.**
