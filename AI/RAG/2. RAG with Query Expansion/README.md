@@ -118,7 +118,7 @@ In the fiscal year ending December 31, 2021, our company recorded a total profit
 ```
 
 ### Visualisation Example
-Below is the embedding visualisation generated for the query and the retrieved documents:
+Below is the embedding visualisation generated for the query and the retrieved documents. It can be seen that the **augmented query embedding** is much closer to the retrieved embeddings than the original query's embedding ✅
 
 ![Embedding Visualisation](images/qexpansion_plot.png)
 
