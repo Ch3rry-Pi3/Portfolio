@@ -8,8 +8,6 @@ This project helps you:
 2. 📜 Gain experience with user input and string methods.  
 3. 🗺️ Create a fun and engaging story-driven game.
 
----
-
 ## Setup Instructions  
 
 ### 1. Prerequisites  
@@ -28,8 +26,6 @@ This project helps you:
 - 🎮 Follow the on-screen story prompts and type your choices (e.g., `left`, `right`).  
 - ⚡ Your decisions will determine the outcome of your adventure.  
 
----
-
 ## Key Features  
 
 1. **📖 Interactive Storytelling**:  
@@ -41,8 +37,6 @@ This project helps you:
 
 3. **💡 Beginner-Friendly**:  
    - Simple code structure designed to practice Python basics.  
-
----
 
 ## Example Gameplay  
 
@@ -61,14 +55,10 @@ yellow
 You found the treasure. You Win!
 ```
 
----
-
 ## Additional Notes  
 
 - 🐣 This project is great for beginners learning Python.  
 - 🛠️ Feel free to expand the story or add more challenges for even greater adventures.  
 - 🎉 Perfect for sparking creativity and having fun with coding!  
-
----
 
 **⚓ Set sail and embark on your quest for treasure! Good luck!** 🏴‍☠️✨
