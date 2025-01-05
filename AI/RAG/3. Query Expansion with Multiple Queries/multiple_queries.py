@@ -173,95 +173,91 @@ def visualise_embeddings(embeddings, retrieved_embeddings, query_embeddings, aug
 # 8. Main Function
 # ==========================
 def main():
-    """
-    Main function to execute the query expansion pipeline.
-    """
-    # Define the original query
-    original_query = (
-        "What details can you provide about the factors that led to revenue growth?"
-    )
+    query = "What has been the investment in research and development?"
+    results = chroma_collection.query(query_texts=[query], n_results=10, include=["documents", "embeddings"])
 
-    # Generate related questions to expand the query
-    aug_queries = generate_multi_query(original_query)  # Use LLM to generate related questions
+    retrieved_documents = results["documents"][0]
+    for doc in retrieved_documents:
+        print(word_wrap(doc), "\n")
 
-    # Print the generated queries
-    print("Generated Queries:")
-    for query in aug_queries:
-        print(f"- {query}")
+    # Rerank using CrossEncoder
+    cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+    pairs = [[query, doc] for doc in retrieved_documents]
+    scores = cross_encoder.predict(pairs)
 
-    # Combine the original query with the augmented queries
-    joint_query = [original_query] + aug_queries
+    print("Scores:")
+    for score in scores:
+        print(score)
 
-    # Query the vector store with the expanded queries
-    results = chroma_collection.query(
-        query_texts=joint_query, n_results=5, include=["documents", "embeddings"]
-    )  # Retrieve documents based on the expanded queries
+    # Multi-query Expansion
+    original_query = "What were the most important factors that contributed to increases in revenue?"
+    generated_queries = [
+        "What were the major drivers of revenue growth?",
+        "Were there any new product launches that contributed to the increase in revenue?",
+        "Did any changes in pricing or promotions impact the revenue growth?",
+        "What were the key market trends that facilitated the increase in revenue?",
+        "Did any acquisitions or partnerships contribute to the revenue growth?",
+    ]
 
-    # Aggregate context from all retrieved documents
-    aggregated_context = set()
-    for i, query in enumerate(joint_query):
-        print(f"\nQuery: {query}")
-        print("Results:")
-        for doc in results["documents"][i]:
-            aggregated_context.add(doc)
-            print(word_wrap(doc))
-            print("-" * 80)
+    joint_query = [original_query] + generated_queries
+    results = chroma_collection.query(query_texts=joint_query, n_results=10, include=["documents", "embeddings"])
 
-    # Combine aggregated context into a single string
-    final_context = "\n\n".join(aggregated_context)
+    unique_documents = set()
+    for doc_set in results["documents"]:
+        unique_documents.update(doc_set)
 
-    # Use the LLM to generate a final answer
-    def generate_final_answer(query, context, model="gpt-3.5-turbo"):
+    unique_documents = list(unique_documents)
+    pairs = [[original_query, doc] for doc in unique_documents]
+    rerank_scores = cross_encoder.predict(pairs)
+
+    top_indices = np.argsort(rerank_scores)[::-1][:5]
+    top_documents = [unique_documents[i] for i in top_indices]
+    context = "\n\n".join(top_documents)
+
+    # Generate Final Answer
+    def generate_answer(query, context):
         prompt = f"""
-        You are a highly knowledgeable assistant. Based on the following context, answer the user's question:
-        
+        You are a knowledgeable assistant. Based on the following context, answer the user's question:
+
         Context:
         {context}
-        
+
         Question:
         {query}
-        
-        Provide a concise, clear, and accurate response.
         """
-        messages = [
-            {"role": "system", "content": prompt},
-        ]
-        response = client.chat.completions.create(
-            model=model,
-            messages=messages,
-        )
+        messages = [{"role": "system", "content": prompt}]
+        response = client.chat.completions.create(model="gpt-3.5-turbo", messages=messages)
         return response.choices[0].message.content
 
-    # Generate the final answer
-    final_answer = generate_final_answer(original_query, final_context)
+    final_answer = generate_answer(original_query, context)
     print("\nFinal Answer:")
     print(final_answer)
 
     # Visualise embeddings
-    embeddings = chroma_collection.get(include=["embeddings"])["embeddings"]  # Get dataset embeddings
-    umap_transform = umap.UMAP(random_state=0, transform_seed=0).fit(embeddings)  # Fit UMAP for dimensionality reduction
-    projected_dataset_embeddings = project_embeddings(embeddings, umap_transform)  # Project dataset embeddings
+    embeddings = np.array(chroma_collection.get(include=["embeddings"])["embeddings"])
+    umap_transform = umap.UMAP(random_state=0, transform_seed=0).fit(embeddings)
+    projected_dataset_embeddings = project_embeddings(embeddings, umap_transform)
 
-    original_query_embedding = embedding_function([original_query])  # Generate embedding for the original query
-    augmented_query_embeddings = embedding_function(joint_query)  # Generate embeddings for the augmented queries
+    original_query_embedding = embedding_function([original_query])
+    augmented_query_embeddings = embedding_function(joint_query)
 
-    project_original_query = project_embeddings(original_query_embedding, umap_transform)  # Project original query
-    project_augmented_queries = project_embeddings(
-        augmented_query_embeddings, umap_transform
-    )  # Project augmented queries
+    project_original_query = project_embeddings(original_query_embedding, umap_transform)
+    project_augmented_queries = project_embeddings(augmented_query_embeddings, umap_transform)
 
     retrieved_embeddings = results["embeddings"]
     result_embeddings = [item for sublist in retrieved_embeddings for item in sublist]
-
-    projected_result_embeddings = project_embeddings(result_embeddings, umap_transform)  # Project retrieved embeddings
+    projected_result_embeddings = project_embeddings(result_embeddings, umap_transform)
 
     visualise_embeddings(
         projected_dataset_embeddings,
         projected_result_embeddings,
         project_original_query,
         project_augmented_queries,
-        original_query,
-    )  # Visualise the embeddings
+        "Query and Document Embeddings",
+    )
+
+if __name__ == "__main__":
+    main()
 
 
 # ==========================
