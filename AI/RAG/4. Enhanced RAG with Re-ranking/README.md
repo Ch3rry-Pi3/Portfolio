@@ -59,6 +59,24 @@ This technique significantly improves the alignment between the retrieved contex
 - **Process**:
   - Use a cross-encoder model to assign relevance scores to each document.
   - Sort the documents by score in descending order.
+
+#### Relevant Code:
+```python
+# Initialise the cross-encoder model
+cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+
+# Create query-document pairs for ranking
+pairs = [[query, doc] for doc in documents]
+
+# Predict relevance scores for each pair
+scores = cross_encoder.predict(pairs)
+
+# Sort scores in descending order
+ranked_indices = np.argsort(scores)[::-1]
+
+# Retrieve documents in ranked order
+top_documents = [documents[i] for i in ranked_indices]
+```
 - **Output**: A prioritised list of documents.
 
 ### 7. **📜 Answer Generation**
@@ -67,6 +85,19 @@ This technique significantly improves the alignment between the retrieved contex
   - Aggregate the top-ranked documents into a single context.
   - Pass the context and the original query to the LLM to generate the answer.
 - **Output**: A concise, well-informed answer.
+
+#### Relevant Code:
+```python
+# Aggregate the top documents into a single context
+top_context = "\n\n".join(top_documents[:top_k])
+
+# Generate the final answer
+final_answer = generate_final_answer(original_query, top_context)
+
+# Print the final answer
+print("\nFinal Answer:\n")
+print(final_answer)
+```
 
 ## Example Queries and Output
 
@@ -93,6 +124,7 @@ This technique significantly improves the alignment between the retrieved contex
 9. Increase in Office commercial products and cloud services revenue, driven by Office 365 commercial growth.
 10. Increase in LinkedIn revenue.
 ```
+
 ## Setup Instructions
 
 ### 1. Set Up the Environment
@@ -129,7 +161,7 @@ OPENAI_API_KEY="Enter your OpenAI API key here"
 ### 5. Run the Application
 ▶️ Run the application:
 ```bash
-python rag_with_reranking.py
+python qe_reranking.py
 ```
 
 ### 6. Interact with the Application
@@ -143,4 +175,3 @@ python rag_with_reranking.py
 
 ---
 **For further inquiries or enhancements, please contact the project maintainer.**
-

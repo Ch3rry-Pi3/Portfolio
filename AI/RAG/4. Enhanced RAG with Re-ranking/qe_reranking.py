@@ -35,21 +35,21 @@ from helper_utils import word_wrap  # Helper function for formatted text wrappin
 # 2. Configuration Setup
 # ==========================
 # Load environment variables from .env file
-load_dotenv()
-openai_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=openai_key)
+load_dotenv()                               # Load variables like the OpenAI API key from the .env file
+openai_key = os.getenv("OPENAI_API_KEY")    # Retrieve the API key for OpenAI
+client = OpenAI(api_key=openai_key)         # Initialise the OpenAI client
 
 # Initialise embedding function
-embedding_function = SentenceTransformerEmbeddingFunction()
+embedding_function = SentenceTransformerEmbeddingFunction()  # Prepares a function to create embeddings
 
 # ==========================
 # 3. Load and Preprocess PDF
 # ==========================
 def load_pdf_text(pdf_path):
     """Loads and extracts text from a PDF."""
-    reader = PdfReader(pdf_path)
-    pdf_texts = [p.extract_text().strip() for p in reader.pages]
-    return [text for text in pdf_texts if text]  # Filter empty strings
+    reader = PdfReader(pdf_path)                                    # Read the PDF file
+    pdf_texts = [p.extract_text().strip() for p in reader.pages]    # Extract text from each page
+    return [text for text in pdf_texts if text]                     # Filter out empty strings
 
 # ==========================
 # 4. Text Splitting
@@ -58,27 +58,28 @@ def split_text(texts):
     """Splits text into manageable chunks using character and token splitting."""
     character_splitter = RecursiveCharacterTextSplitter(
         separators=["\n\n", "\n", ". ", " ", ""], chunk_size=1000, chunk_overlap=0
-    )
+    )  # Splits text into chunks of 1000 characters with no overlap
     character_split_texts = character_splitter.split_text("\n\n".join(texts))
 
     token_splitter = SentenceTransformersTokenTextSplitter(chunk_overlap=0, tokens_per_chunk=256)
+    # Further splits text into smaller chunks based on token count
     token_split_texts = []
     for text in character_split_texts:
         token_split_texts += token_splitter.split_text(text)
     
-    return token_split_texts
+    return token_split_texts  # Returns the list of text chunks
 
 # ==========================
 # 5. ChromaDB Setup and Embedding Generation
 # ==========================
 def setup_chromadb(text_chunks):
     """Sets up ChromaDB and adds embeddings for text chunks."""
-    chroma_client = chromadb.Client()
+    chroma_client = chromadb.Client()                       # Initialise the ChromaDB client
     chroma_collection = chroma_client.get_or_create_collection(
         "microsoft-collection", embedding_function=embedding_function
-    )
-    ids = [str(i) for i in range(len(text_chunks))]
-    chroma_collection.add(ids=ids, documents=text_chunks)
+    )  # Create or get a collection to store embeddings
+    ids = [str(i) for i in range(len(text_chunks))]         # Generate unique IDs for each text chunk
+    chroma_collection.add(ids=ids, documents=text_chunks)   # Add the text chunks and embeddings to the collection
     return chroma_collection
 
 # ==========================
@@ -87,23 +88,23 @@ def setup_chromadb(text_chunks):
 def retrieve_documents(collection, queries, top_k=10):
     """Retrieves documents using multiple queries."""
     results = collection.query(query_texts=queries, n_results=top_k, include=["documents"])
-    # Deduplicate documents
-    unique_documents = set()
+    # Perform a query for each input query and return the top_k results
+    unique_documents = set()                # Use a set to store unique documents
     for documents in results["documents"]:
-        unique_documents.update(documents)
-    return list(unique_documents)
+        unique_documents.update(documents)  # Add documents to the set to deduplicate
+    return list(unique_documents)           # Return the unique documents as a list
 
 # ==========================
 # 7. Re-ranking
 # ==========================
 def rerank_documents(query, documents, model_name="cross-encoder/ms-marco-MiniLM-L-6-v2"):
     """Re-ranks documents using a cross-encoder."""
-    cross_encoder = CrossEncoder(model_name)
-    pairs = [[query, doc] for doc in documents]
-    scores = cross_encoder.predict(pairs)
-    ranked_indices = np.argsort(scores)[::-1]  # Sort scores in descending order
-    top_documents = [documents[i] for i in ranked_indices]
-    return top_documents, scores
+    cross_encoder = CrossEncoder(model_name)                # Initialise the cross-encoder model
+    pairs = [[query, doc] for doc in documents]             # Create query-document pairs for ranking
+    scores = cross_encoder.predict(pairs)                   # Predict relevance scores for each pair
+    ranked_indices = np.argsort(scores)[::-1]               # Sort scores in descending order
+    top_documents = [documents[i] for i in ranked_indices]  # Retrieve documents in ranked order
+    return top_documents, scores                            # Return the ranked documents and their scores
 
 # ==========================
 # 8. Generate Final Answer
@@ -121,23 +122,23 @@ def generate_final_answer(query, context, model="gpt-3.5-turbo"):
     Question:
     {query}
     """
-    messages = [{"role": "system", "content": prompt}]
-    response = client.chat.completions.create(model=model, messages=messages)
-    return response.choices[0].message.content.strip()
+    messages = [{"role": "system", "content": prompt}]                          # Create a system message with the prompt
+    response = client.chat.completions.create(model=model, messages=messages)   # Get the LLM's response
+    return response.choices[0].message.content.strip()                          # Return the generated answer, stripped of whitespace
 
 # ==========================
 # 9. Main Function
 # ==========================
 def main():
     # Load and preprocess PDF
-    pdf_path = "data/microsoft-annual-report.pdf"
-    pdf_texts = load_pdf_text(pdf_path)
+    pdf_path = "data/microsoft-annual-report.pdf"           # Path to the input PDF
+    pdf_texts = load_pdf_text(pdf_path)                     # Extract text from the PDF
 
     # Split text into chunks
-    token_split_texts = split_text(pdf_texts)
+    token_split_texts = split_text(pdf_texts)               # Divide text into manageable chunks
 
     # Setup ChromaDB and add embeddings
-    chroma_collection = setup_chromadb(token_split_texts)
+    chroma_collection = setup_chromadb(token_split_texts)   # Create embeddings and store in ChromaDB
 
     # Original query and expanded queries
     original_query = "What were the most important factors that contributed to increases in revenue?"
@@ -148,25 +149,26 @@ def main():
         "What were the key market trends that facilitated the increase in revenue?",
         "Did any acquisitions or partnerships contribute to the revenue growth?",
     ]
-    queries = [original_query] + expanded_queries
+    queries = [original_query] + expanded_queries                               # Combine original and expanded queries
 
     # Retrieve and deduplicate documents
-    unique_documents = retrieve_documents(chroma_collection, queries)
+    unique_documents = retrieve_documents(chroma_collection, queries)           # Retrieve documents for all queries
 
     # Re-rank retrieved documents
-    top_documents, scores = rerank_documents(original_query, unique_documents)
+    top_documents, scores = rerank_documents(original_query, unique_documents)  # Rank documents by relevance
 
     # Select top documents and generate context
-    top_k = 5
-    top_context = "\n\n".join(top_documents[:top_k])
+    top_k = 5                                                                   # Number of top documents to include in the context
+    top_context = "\n\n".join(top_documents[:top_k])                            # Aggregate the top documents into a single context
 
     # Generate the final answer
-    final_answer = generate_final_answer(original_query, top_context)
+    final_answer = generate_final_answer(original_query, top_context)           # Generate the answer using the LLM
     print("\nFinal Answer:\n")
-    print(final_answer)
+    print(final_answer)                                                         # Print the final answer
 
 # ==========================
 # 10. Entry Point
 # ==========================
 if __name__ == "__main__":
     main()
+
