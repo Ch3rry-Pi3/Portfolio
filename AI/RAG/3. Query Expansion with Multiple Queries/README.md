@@ -139,7 +139,7 @@ The factors that led to revenue growth include:
 ```
 
 ### Visualisation Example
-Below is the embedding visualisation generated for the query and the retrieved documents. It can be seen that the **augmented query embeddings** are much closer to the retrieved embeddings than the original query's embedding ✅
+Below is the embedding visualisation generated for the query and the retrieved documents. It can be seen that the **multiple queries** generate many more retrieved embeddings to add additional context relative to the Query Expansion with Hypothetical Answer approach ✅
 
 ![Embedding Visualisation](images/qexpansion_plot.png)
 
