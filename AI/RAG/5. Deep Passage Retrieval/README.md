@@ -22,15 +22,15 @@ This project demonstrates the application of **Dense Passage Retrieval (DPR)**, 
 
 ## ⚙️ **Pipeline Steps**
 
-### 1. **Model and Tokenizer Loading**
+### 1. **Model and Tokeniser Loading**
 - Two separate encoders are used:
   - **DPRQuestionEncoder**: Encodes the query into a dense embedding.
   - **DPRContextEncoder**: Encodes each context passage into a dense embedding.
 - These models are pre-trained on datasets like **Natural Questions (NQ)** and **MS MARCO**.
 
 ### 2. **Query and Passage Encoding**
-- The query is tokenized and passed through the **question encoder** to generate a semantic embedding.
-- Context passages are tokenized and processed by the **context encoder** to generate passage embeddings.
+- The query is tokenised and passed through the **question encoder** to generate a semantic embedding.
+- Context passages are tokenised and processed by the **context encoder** to generate passage embeddings.
 
 ### 3. **Similarity Computation**
 - The cosine similarity between the query embedding and each passage embedding is calculated, ranking the passages by relevance.
@@ -121,7 +121,7 @@ python dpr_example.py
 
 ### **1. Loading Models**
 ```python
-# Load question encoder and tokenizer
+# Load question encoder and tokeniser
 question_encoder = DPRQuestionEncoder.from_pretrained(
     "facebook/dpr-question_encoder-single-nq-base"
 )
@@ -129,7 +129,7 @@ question_tokenizer = DPRQuestionEncoderTokenizer.from_pretrained(
     "facebook/dpr-question_encoder-single-nq-base"
 )
 
-# Load context encoder and tokenizer
+# Load context encoder and tokeniser
 context_encoder = DPRContextEncoder.from_pretrained(
     "facebook/dpr-ctx_encoder-single-nq-base"
 )
