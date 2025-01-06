@@ -1,4 +1,3 @@
-Here’s a fun README for your **Rock, Paper, Scissors** game with appropriate emojis! 🎮✂️📄🪨
 # 🪨📄✂️ **Rock, Paper, Scissors Game** 🎮
 
 ## Overview  
