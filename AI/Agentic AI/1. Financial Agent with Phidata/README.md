@@ -53,7 +53,8 @@ python multi_agent.py
 When you run the application, it initialises the agents and processes the query:  
 **"Summarise analyst recommendation and share the latest news for NVDA"**
 
-📸 **Console Output Screenshot**:
+📸 **Console Output**:
+
 ![Console Output](images/output.png)
 
 The output includes:
@@ -63,7 +64,8 @@ The output includes:
 ### 2. **Viewing a News Article**
 One of the links from the output leads to a news article discussing **Nvidia's performance** and its AI chip unveiling at CES.
 
-📸 **News Article Screenshot**:
+📸 **News Article**:
+
 ![News Article](images/news.png)
 
 ## 🧠 **Agent Overview**
@@ -100,6 +102,7 @@ Summarise analyst recommendation and share the latest news for NVDA
 
 #### Latest News:
 - **"Nvidia slips after hitting record high following CES AI superchip unveiling"**  
+
   [Business Insider](https://www.businessinsider.com)
 
 
