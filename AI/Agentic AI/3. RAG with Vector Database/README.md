@@ -31,6 +31,7 @@ Navigate to the **pgvector** documentation for detailed instructions:
 Copy the following command into your **bash terminal** to create and run the container:
 
 📸 **Setup Command**:
+
 ![Docker Setup](images/container.png)
 
 ## 🛠️ **Code Walkthrough**
