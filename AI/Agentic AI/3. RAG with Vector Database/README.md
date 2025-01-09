@@ -13,6 +13,7 @@ Welcome to the **Thai Recipe Assistant**, a Retrieval-Augmented Generation (RAG)
 This assistant is built on a beautiful collection of **Thai recipes**, captured in this cookbook:
 
 📸 **Thai Recipes Cookbook**:
+
 ![Thai Recipes Cookbook](images/thai_recipes.png)
 
 🖇️ **PDF URL**: [Thai Recipes PDF](https://phi-public.s3.amazonaws.com/recipes/ThaiRecipes.pdf)
@@ -23,6 +24,7 @@ To store PDF embeddings, we use a **Dockerized Postgres vector database**. Follo
 
 ### **1. Create the Docker Container** 📦
 Navigate to the **pgvector** documentation for detailed instructions:
+
 [PgVector Setup](https://docs.phidata.com/vectordb/pgvector)
 
 ### **2. Run the Docker Command** 🐋
@@ -70,6 +72,7 @@ python pdf_assistant.py
 The assistant will load the PDF into the knowledge base. On the first run, it will add all 14 pages of the PDF as documents. In subsequent runs, it skips re-adding them.
 
 📸 **Loading Knowledge Base**:
+
 ![Loading Knowledge Base](images/loading.png)
 
 ## 💬 **Interacting with the Assistant**
@@ -77,14 +80,14 @@ The assistant will load the PDF into the knowledge base. On the first run, it wi
 ### **1. Query: "Give me the names of the Thai dishes that have recipes"**
 The assistant provides a neatly formatted list of all the Thai dishes available in the cookbook:
 
-📸 **Dish List Output**:
+📸 **Dish List**:
 
 ![Dish List Output](images/list.png)
 
 ### **2. Query: "Awesome! Now, give me the recipe for ... Som Tum"**
 The assistant retrieves and displays the full recipe and instructions for **Som Tum (Papaya Salad)**.
 
-📸 **Som Tum Recipe Output**:
+📸 **Som Tum Recipe**:
 
 ![Som Tum Recipe Output](images/som_tum.png)
 

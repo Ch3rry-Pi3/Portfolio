@@ -53,7 +53,7 @@ python multi_agent.py
 When you run the application, it initialises the agents and processes the query:  
 **"Summarise analyst recommendation and share the latest news for NVDA"**
 
-📸 **Console Output**:
+📸 **Console**:
 
 ![Console Output](images/output.png)
 

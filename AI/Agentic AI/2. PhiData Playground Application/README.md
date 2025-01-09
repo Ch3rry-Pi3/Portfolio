@@ -57,7 +57,7 @@ http://localhost:7777
 ### 1. **Console Output**
 When you run the script, the server starts, and the console displays the connection information. This step creates a link between the application and the **PhiData Playground**.
 
-📸 **Console Output Screenshot**:
+📸 **Console Output**:
 
 ![Console Output](images/console.png)
 
@@ -65,7 +65,7 @@ When you run the script, the server starts, and the console displays the connect
 ### 2. **Accessing the Playground**
 Once the server is running, open your browser and navigate to `http://localhost:7777`. You'll see the PhiData Playground interface.
 
-📸 **PhiData Playground Screenshot**:
+📸 **PhiData Playground**:
 
 ![PhiData Playground](images/playground.png)
 
@@ -73,14 +73,14 @@ Once the server is running, open your browser and navigate to `http://localhost:
 ### 3. **Selecting an Endpoint**
 On the right-hand side of the Playground, you can select the `localhost:7777` endpoint to connect to the application. From the dropdown menu, you can also see the agents available in the application.
 
-📸 **Endpoint Selection Screenshot**:
+📸 **Endpoint Selection**:
 
 ![Endpoint Selection](images/endpoint.png)
 
 ### 4. **Agent Demo**
 You can interact with the agents by asking questions or performing tasks. For example, asking the agents "What is your special skill?" provides a response detailing their capabilities.
 
-📸 **Demo Screenshot**:
+📸 **Demo**:
 
 ![Agent Demo](images/demo.png)
 
@@ -89,11 +89,11 @@ Here are examples of queries you can perform:
 - Retrieve analyst recommendations for **Tesla** and the latest news.
 - Compare the performance of **Nvidia** and **Tesla** stocks.
 
-📸 **Tesla Query Screenshot**:
+📸 **Tesla Query**:
 
 ![Tesla Query](images/tesla.png)
 
-📸 **Nvidia vs Tesla Comparison Screenshot**:
+📸 **Nvidia vs Tesla Comparison**:
 
 ![Nvidia vs Tesla](images/nvi_telsa.png)
 
