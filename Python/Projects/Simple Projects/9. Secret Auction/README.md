@@ -81,7 +81,7 @@ The winner is Bob with a bid of $200
 
 ## File Details  
 
-### `main.py`  
+### `secret_auction.py`  
 The core program that:  
 - Collects bids.  
 - Stores bids in a dictionary.  
