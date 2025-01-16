@@ -1,4 +1,3 @@
-```markdown
 # 🦜🔗 **LangChain Q&A Evaluation Workflows**
 
 ## 📖 **Overview**
@@ -103,4 +102,3 @@ In this project, we rely on the **stuff** approach for smaller datasets. For lar
 These scripts demonstrate how to build and evaluate a Q&A application using LangChain, vector databases, and OpenAI’s GPT models. The **manual evaluation** process is straightforward and transparent, while the **LLM-assisted** approach speeds up testing by automatically grading each answer. 
 
 Experiment with different evaluation strategies and retrieval chain approaches to handle larger datasets or more complex requirements. Happy coding! 🦜🔗
-```
