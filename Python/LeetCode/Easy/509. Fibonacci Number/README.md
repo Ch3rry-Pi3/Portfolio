@@ -80,7 +80,7 @@ T(n) \approx O(1.618^n) \approx O(2^n)
 ## 📝 **Project Structure**
 
 ```
-leetcode_509_fibonacci/
+509. Fibonacci Number/
 ├── recursive_fib.py      # Naïve recursive Fibonacci (O(2^n))
 ├── optimised_fib.py      # Memoised Fibonacci (O(n))
 ├── README.md             # Explanation and walkthrough
