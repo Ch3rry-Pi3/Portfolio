@@ -111,11 +111,11 @@ def main():
     solver = Solution()
     
     test_cases = [
-        [2, 3, -2, 4],       # Expected output: 6
-        [-2, 0, -1],         # Expected output: 0
-        [1, -2, -3, 4],      # Expected output: 12
-        [-1, -3, -10, 0, 60],# Expected output: 60
-        [2, -5, 3, 1, -4, 0, -2], # Expected output: 120
+        [2, 3, -2, 4],                  # Expected output: 6
+        [-2, 0, -1],                    # Expected output: 0
+        [1, -2, -3, 4],                 # Expected output: 12
+        [-1, -3, -10, 0, 60],           # Expected output: 60
+        [2, -5, 3, 1, -4, 0, -2],       # Expected output: 120
     ]
 
     for nums in test_cases:
