@@ -8,7 +8,7 @@ This project solves **LeetCode Problem 33: Search in Rotated Sorted Array** usin
 
 You are given an array `nums` that was originally sorted in ascending order but then **rotated at an unknown pivot**.
 
-Given the rotated sorted array `nums` and an integer `target`, return **the index of ********************************************************************`target`******************************************************************** if it is in \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*****`nums`**, or **`-1`**\*\* if it is not in \*\*\*\*`nums`\*\*.
+Given the rotated sorted array `nums` and an integer `target`, return **the index of **`target`** if it is in **`nums`**, or **`-1`** if it is not in**`nums`.
 
 🔹 **Constraints:**
 
@@ -42,7 +42,7 @@ Output: -1
 Explanation: Target `0` is not in the array.
 ```
 
-## 🚀 **How It Works: Optimized Binary Search**
+## 🚀 **How It Works: Optimised Binary Search**
 
 ### **Intuition**
 
@@ -50,14 +50,14 @@ Since the array was originally sorted but then rotated, **binary search** can st
 
 ### **Algorithm Steps**
 
-1️⃣ **Initialize variables:**
+1️⃣ **Initialise variables:**
 
 - `left = 0`, `right = len(nums) - 1`: Define binary search boundaries.
 
 2️⃣ **Binary Search:**
 
 - **Find the middle index** → `middle = (left + right) // 2`.
-- **Check if ********************************************************************`nums[middle]`******************************************************************** is the target**.
+- **Check if **`nums[middle]`** is the target**.
 - **Determine which half is sorted:**
   - If `nums[left] <= nums[middle]`, the **left half is sorted**.
   - Otherwise, the **right half is sorted**.
@@ -65,7 +65,7 @@ Since the array was originally sorted but then rotated, **binary search** can st
   - If the target is **within the sorted half**, search within it.
   - Otherwise, search the **unsorted half**.
 
-3️⃣ **Return index if found, otherwise return \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*****`-1`**.
+3️⃣ **Return index if found, otherwise return **`-1`**.
 
 ### **Step-by-Step Example Walkthrough**
 
@@ -139,7 +139,7 @@ class Solution:
 | Approach                            | Time Complexity | Space Complexity |
 | ----------------------------------- | --------------- | ---------------- |
 | **Brute Force (scan entire array)** | **O(n)** ❌      | **O(1)** ✅       |
-| **Optimized Binary Search**         | **O(log n)** ✅  | **O(1)** ✅       |
+| **Optimised Binary Search**         | **O(log n)** ✅  | **O(1)** ✅       |
 
 - **Brute force** checks every element, making it **slow for large arrays**.
 - **Binary search** eliminates **half of the search space per iteration**, making it **fast and efficient**.
