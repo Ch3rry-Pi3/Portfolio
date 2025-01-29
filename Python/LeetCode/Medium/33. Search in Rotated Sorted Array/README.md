@@ -2,7 +2,7 @@
 
 ## 📌 **Overview**
 
-This project solves **LeetCode Problem 33: Search in Rotated Sorted Array** using an **optimized binary search approach** that runs in **O(log n) time complexity**.
+This project solves **LeetCode Problem 33: Search in Rotated Sorted Array** using an **optimised binary search approach** that runs in **O(log n) time complexity**.
 
 ### **Problem Statement**
 
