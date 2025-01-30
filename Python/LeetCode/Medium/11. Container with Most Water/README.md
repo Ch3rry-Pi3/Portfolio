@@ -78,7 +78,7 @@ class Solution:
         :return: Maximum container water area
         """
         result = 0
-        left, right = 0, len(height) - 1  # Two-pointer initialization
+        left, right = 0, len(height) - 1  # Two-pointer initialisation
 
         while left < right:
             area = (right - left) * min(height[left], height[right])
@@ -108,7 +108,7 @@ class Solution:
 ├── container_with_most_water.py   # Efficient O(n) two-pointer solution
 ├── README.md                      # Detailed explanation & walkthrough
 ├── images/
-    ├── container.jpg               # Visualization of problem example
+    ├── container.jpg               # Visualisation of problem example
 ```
 
 **🚀 Master the Two-Pointer Technique for Maximum Water Containers!**
