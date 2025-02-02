@@ -15,16 +15,16 @@ class Solution:
         :param target: Target sum
         :return: Indices of the two numbers that add up to the target
         """
-        prev_map = {}  # Dictionary to store number: index pairs
+        prev_map = {}                           # Dictionary to store number: index pairs
 
         for i, n in enumerate(nums):
             diff = target - n
             if diff in prev_map:
-                return [prev_map[diff], i]  # Return the indices of the two numbers
+                return [prev_map[diff], i]      # Return the indices of the two numbers
             
-            prev_map[n] = i  # Store the current number with its index
+            prev_map[n] = i                     # Store the current number with its index
         
-        return []  # Return an empty list if no solution is found (though problem guarantees one)
+        return []                               # Return an empty list if no solution is found (though problem guarantees one)
 
     
 def main():
