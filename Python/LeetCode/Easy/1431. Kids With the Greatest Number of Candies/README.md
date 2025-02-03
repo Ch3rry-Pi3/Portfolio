@@ -1,4 +1,4 @@
-# 🍬 Kids With the Greatest Number of Candies
+# 🍬 LeetCode 1431: Kids With the Greatest Number of Candies
 
 ## 📝 Overview
 This project solves **LeetCode Problem 1431: Kids With the Greatest Number of Candies**.  

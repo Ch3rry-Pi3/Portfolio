@@ -1,4 +1,4 @@
-# 📌 Greatest Common Divisor of Strings
+# 📌 LeetCode 1071: Greatest Common Divisor of Strings
 
 ## 📝 Overview
 This project solves **LeetCode Problem 1071: Greatest Common Divisor of Strings**.
