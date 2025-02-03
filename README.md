@@ -5,7 +5,7 @@ This is my digital playground 🎮 for all things **Computer Science, AI, Data S
 ### 📂 **What's Inside?**  
 🔹 **AI** – Deep dives into neural networks, transformers, and cutting-edge models 🧠💡  
 🔹 **C Programming/Basics** – Mastering the foundations of low-level programming 🏗️🔢  
-🔹 **Docker** – Containerizing the future one app at a time 🐳🚢  
+🔹 **Docker** – Containerising the future one app at a time 🐳🚢  
 🔹 **JavaScript/Basics** – Scripting the web with dynamic and interactive magic ✨💻  
 🔹 **Python** – The Swiss army knife of programming 🐍🔬  
 
