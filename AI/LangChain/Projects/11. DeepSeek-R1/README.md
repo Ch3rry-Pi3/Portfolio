@@ -144,7 +144,7 @@ DeepSeek-Code-Companion/
 ## ✨ Features
 
 ✅ **Intuitive AI-powered coding assistant**  
-✅ **Customizable model selection** (DeepSeek variants)  
+✅ **Customisable model selection** (DeepSeek variants)  
 ✅ **Beautiful, dark-themed UI**  
 ✅ **Session history to retain previous conversations**  
 ✅ **Seamless debugging and solution generation**  
