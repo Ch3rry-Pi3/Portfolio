@@ -112,11 +112,11 @@ class Solution:
         :param chars: List of characters to be compressed.
         :return: The new length of the compressed array.
         """
-        insert = 0  # Position to insert compressed characters
-        i = 0  # Pointer to traverse the array
+        insert = 0                                                      # Position to insert compressed characters
+        i = 0                                                           # Pointer to traverse the array
 
         while i < len(chars):
-            group = 1  # Initialise character group count
+            group = 1                                                   # Initialise character group count
 
             # Count consecutive repeating characters
             while (group + i) < len(chars) and chars[group + i] == chars[i]:
@@ -128,14 +128,14 @@ class Solution:
 
             # If the character group is greater than 1, store the count as well
             if group > 1:
-                string = str(group)  # Convert count to string
-                chars[insert:insert + len(string)] = list(string)  # Insert count
-                insert += len(string)  # Move insert pointer forward
+                string = str(group)                                     # Convert count to string
+                chars[insert:insert + len(string)] = list(string)       # Insert count
+                insert += len(string)                                   # Move insert pointer forward
 
             # Move the traversal pointer past this group
             i += group
 
-        return insert  # Return the new length of the compressed array
+        return insert                                                   # Return the new length of the compressed array
 
 
 def main():
@@ -146,11 +146,11 @@ def main():
 
     # Example test cases
     test_cases = [
-        ["a", "a", "b", "b", "c", "c", "c"],  # Expected: ["a", "2", "b", "2", "c", "3"], return 6
-        ["a"],  # Expected: ["a"], return 1
-        ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"],  # Expected: ["a", "b", "1", "0"], return 4
-        ["a", "a", "a", "a", "a"],  # Expected: ["a", "5"], return 2
-        ["a", "b", "c"],  # Expected: ["a", "b", "c"], return 3 (no compression)
+        ["a", "a", "b", "b", "c", "c", "c"],                            # Expected: ["a", "2", "b", "2", "c", "3"], return 6
+        ["a"],                                                          # Expected: ["a"], return 1
+        ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"],        # Expected: ["a", "b", "1", "0"], return 4
+        ["a", "a", "a", "a", "a"],                                      # Expected: ["a", "5"], return 2
+        ["a", "b", "c"],                                                # Expected: ["a", "b", "c"], return 3 (no compression)
     ]
 
     for chars in test_cases:
