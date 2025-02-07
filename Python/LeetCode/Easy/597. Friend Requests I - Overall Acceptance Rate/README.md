@@ -1,7 +1,3 @@
-Of course! Here’s your **beautifully formatted** **`README.md`** for **`friend_requests.py`**, with **clear explanations, examples, and an intuitive walkthrough** to help understand the approach. 🚀😊  
-
----
-
 # 🤝 **LeetCode 597: Friend Requests I - Overall Acceptance Rate**
 
 ## 📌 **Overview**
@@ -23,8 +19,6 @@ We have two tables:
 - If **no requests exist**, return **0.00**.
 - Each request **should be counted only once** (i.e., remove duplicates).
 
----
-
 ## 🎯 **Example Walkthrough**
 ### **Example Input**
 #### **FriendRequest Table**
@@ -44,8 +38,6 @@ We have two tables:
 | 3           | 4           | 2021-07-03   |
 | 3           | 4           | 2021-07-03   |
 | 4           | 5           | 2021-07-05   |
-
----
 
 ### **Step-by-Step Breakdown**
 1️⃣ **Remove duplicate friend requests**  
@@ -68,16 +60,12 @@ accept_rate
 0.75
 ```
 
----
-
 ## 🧠 **Intuition Behind the Approach**
 ### **Key Observations**
 ✔ **Some friend requests might not be accepted.**  
 ✔ **Some accepted requests might not appear in the friend request table.**  
 ✔ **Requests and acceptances should be counted uniquely (remove duplicates).**  
 ✔ **If no requests exist, return `0.00`.**  
-
----
 
 ## 📝 **Step-by-Step Approach**
 ### **1️⃣ Remove Duplicates**
@@ -94,8 +82,6 @@ accept_rate
   acceptance_rate = round(accepted_count / request_count, 2) if request_count != 0 else 0.00
   ```
 - Round the result **to 2 decimal places**.
-
----
 
 ## **💡 Implementation**
 ```python
@@ -128,49 +114,6 @@ def acceptance_rate(friend_request: pd.DataFrame, request_accepted: pd.DataFrame
 
     # Return result as a DataFrame
     return pd.DataFrame({"accept_rate": [accept_rate]})
-
-
-def main():
-    """
-    Demonstrates testing the acceptance_rate function on example datasets.
-    """
-    # Example test data
-    friend_request_data = {
-        "sender_id": [1, 2, 3, 3, 4, 4],
-        "send_to_id": [2, 3, 4, 4, 5, 5],
-        "request_date": pd.to_datetime([
-            "2021-07-01", "2021-07-02", "2021-07-03",
-            "2021-07-03", "2021-07-04", "2021-07-04"
-        ])
-    }
-
-    request_accepted_data = {
-        "requester_id": [1, 3, 3, 4],
-        "accepter_id": [2, 4, 4, 5],
-        "accept_date": pd.to_datetime([
-            "2021-07-02", "2021-07-03", "2021-07-03", "2021-07-05"
-        ])
-    }
-
-    # Convert dictionaries to DataFrames
-    friend_request_df = pd.DataFrame(friend_request_data)
-    request_accepted_df = pd.DataFrame(request_accepted_data)
-
-    print("Friend Request DataFrame:")
-    print(friend_request_df, "\n")
-
-    print("Request Accepted DataFrame:")
-    print(request_accepted_df, "\n")
-
-    # Compute acceptance rate
-    result = acceptance_rate(friend_request_df, request_accepted_df)
-
-    print("Acceptance Rate:")
-    print(result)
-
-
-if __name__ == "__main__":
-    main()
 ```
 
 ---
@@ -183,8 +126,6 @@ if __name__ == "__main__":
 - **Each record is processed once** (`O(n) time complexity`).
 - **Stores results in a new DataFrame** (`O(n) space complexity`).
 
----
-
 ## 🏗 **Project Structure**
 ```
 597. Friend Requests Acceptance Rate/
@@ -193,13 +134,3 @@ if __name__ == "__main__":
 ```
 
 ✨ **Master friend request acceptance rate calculations with this efficient `O(n)` approach!** 🚀  
-
----
-
-## 🎯 **Why This Solution?**
-✔ **Uses an optimal `O(n)` approach for counting requests**  
-✔ **Efficiently handles duplicates before counting**  
-✔ **Handles cases where no friend requests exist (`0.00`)**  
-✔ **Well-structured and intuitive for learning**  
-
-🔥 Now it's **clean, structured, and ready for your portfolio or coding practice!** 🚀😊 Let me know if you'd like any refinements!
