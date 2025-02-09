@@ -1,138 +1,182 @@
-# 🦜🫀 **LangChain Retrieval Techniques**
+# 🦜🔍 **Q&A with LangChain**
 
 ## 📖 **Overview**
 
-This section of the project focuses on **retrieval techniques** in LangChain, specifically addressing limitations of basic similarity search and exploring alternative retrieval methods. The retrieval step is crucial in **retrieval-augmented generation (RAG)**, as it determines the quality and relevance of the information retrieved from a **vector database**.
+This tutorial explores **retrieval-based question answering** in LangChain, focusing on how to fetch relevant context from a vector database and construct an informative response using a large language model (LLM). This is part of a broader tutorial series on advanced **retrieval-augmented generation (RAG)** techniques.
 
-The diagram below illustrates the **retrieval process**, showing how a query passes through a vector store, retrieves relevant splits, and constructs a final prompt for the LLM:
+The diagram below illustrates how this tutorial fits within the overall series:
 
-![Retrieval Overview](images/retrieval.png)
+![QnA Overview](images/L5-QnA.png)
 
-This section covers:
+## 🏗 **Structure of the Retrieval Process**
 
-- **Basic similarity search** and its limitations.
-- **Maximal Marginal Relevance (MMR)** to improve retrieval diversity.
-- **Metadata filtering** for contextual search.
-- **Compression techniques** to refine document retrieval.
-- **SVM-based and TF-IDF-based retrieval** as alternative approaches.
+The question-answering pipeline consists of several key stages:
+
+1. **Storage**: Questions are stored in a **vector database** for similarity search.
+2. **Retrieval**: The most relevant text chunks are retrieved based on similarity.
+3. **Output**: A final **prompt** is constructed and passed to the LLM to generate an answer.
+
+The diagram below illustrates this structure:
+
+![Retrieval Structure](images/L5-structure.png)
+
+## 🛠 **Implementation Details**
+
+This tutorial covers:
+
+- **Setting up a Chroma vector database** with OpenAI embeddings.
+- **Querying the database** for relevant information.
+- **Constructing a retrieval-based QA system** using LangChain.
+- **Exploring alternative retrieval strategies** for improved results.
 
 ## 📂 **Files**
 
-1. **`1_addressing_problems.py`**  
-   Covers challenges in **basic similarity search** and solutions such as **MMR** and **metadata filtering**.
+1. **`question_answering.py`** - Implements a retrieval-based QA pipeline.
 
-2. **`2_other_techniques.py`**  
-   Explores **SVM and TF-IDF retrieval** as alternatives to standard vector-based retrieval.
+## 🚀 **Core Implementation**
 
-## 🛠 **Functionality**
-
-### **Key Features**
-
-- **Suppresses deprecation warnings** for cleaner console output.
-- **Sets up OpenAI API** for embedding generation.
-- **Implements different retrieval strategies** for improved search performance.
-- **Demonstrates retrieval limitations** and mitigation techniques.
-
-### **High-Level Flow**
-
-1. **Query Processing & Similarity Search**  
-   - Queries are transformed into vector embeddings.
-   - Documents are retrieved based on similarity.
-
-2. **Addressing Diversity with MMR**  
-   - Reduces redundancy in retrieved documents.
-   - Ensures a diverse set of relevant results.
-
-3. **Metadata Filtering for Contextual Search**  
-   - Enables retrieval from specific sources (e.g., a particular lecture note).
-
-4. **Applying Compression for Efficient Retrieval**  
-   - Uses LLM-based compression to refine document retrieval.
-
-5. **Exploring Alternative Retrieval Methods**  
-   - Implements **SVM and TF-IDF** retrieval as non-vector-based approaches.
-
-## 📝 **Example Outputs**
-
-### 📄 **Performing Similarity Search**
-```python
-question = "What did they say about MATLAB?"
-docs_ss = vectordb.similarity_search(question, k=3)
-print(docs_ss[0].page_content[:200])
-```
-```plaintext
-"Those homeworks will be done in either MATLAB B or in Octave ..."
-```
-
-### 📊 **Applying Maximal Marginal Relevance (MMR)**
-```python
-question = "What did they say about MATLAB?"
-docs_mmr = vectordb.max_marginal_relevance_search(question, k=3)
-print(docs_mmr[1].page_content[:200])
-```
-```plaintext
-"Algorithm then? So what's different? How come I was making all that noise earlier about \nlea st squa..."
-```
-
-### 📚 **Filtering by Metadata for Contextual Search**
-```python
-question = "What did they say about regression in the third lecture?"
-docs = vectordb.similarity_search(
-    question,
-    k=3,
-    filter={"source": "docs/cs229_lectures/MachineLearning-Lecture03.pdf"}
-)
-for d in docs:
-    print(d.metadata)
-```
-```plaintext
-{'source': 'docs/cs229_lectures/MachineLearning-Lecture03.pdf', 'page': 0}
-{'source': 'docs/cs229_lectures/MachineLearning-Lecture03.pdf', 'page': 13}
-{'source': 'docs/cs229_lectures/MachineLearning-Lecture03.pdf', 'page': 4}
-```
-
-### 🧪 **Compression-Based Retrieval**
-To reduce redundancy and improve retrieval efficiency, we apply **LLM-based compression**. The diagram below shows how relevant splits are compressed before being passed to the LLM:
-
-![Compression Overview](images/compression.png)
+### **Setting Up the Vector Database**
 
 ```python
-compressed_docs = compression_retriever.get_relevant_documents(question)
-pretty_print_docs(compressed_docs)
-```
-```plaintext
-Document 1:
-"Those homeworks will be done in either MATLAB B or in Octave..."
-Document 2:
-"Oh, it was the MATLAB."
+import warnings
+from langchain.vectorstores import Chroma
+from langchain.embeddings.openai import OpenAIEmbeddings
+from helper_functions import setup_openai_api
+
+# Suppress deprecation warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+# Initialise OpenAI API
+setup_openai_api()
+
+# Setup the Chroma vector database
+persist_directory = 'docs/chroma/'
+embedding = OpenAIEmbeddings()
+vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
+
+# Check the number of stored documents
+print(f"Vector DB contains {vectordb._collection.count()} entries.")
 ```
 
-### 🧬 **Using SVM & TF-IDF Retrievers**
+#### 🖥 **Console Output**
+```
+Vector DB contains 1024 entries.
+```
+
+### **Performing a Retrieval-Based Query**
+
 ```python
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import RetrievalQA
+
+# Select language model
+llm = ChatOpenAI(model_name="gpt-4", temperature=0)
+
+# Create a retrieval-based QA pipeline
+qa_chain = RetrievalQA.from_chain_type(llm, retriever=vectordb.as_retriever())
+
+# Define the question
 question = "What are major topics for this class?"
-docs_svm = svm_retriever.get_relevant_documents(question)
-print(docs_svm[0].page_content[:200])
+result = qa_chain({"query": question})
+
+print(result["result"])
 ```
-```plaintext
-"Let me just check what questions you have right now. So if there are no questions, I'll just close ..."
+
+#### 🖥 **Console Output**
 ```
+'The major topics for this class include machine learning, statistics, and algebra.
+Additionally, there will be discussions on extensions of the material covered in the main lectures.'
+```
+
+### **Enhancing the QA System with Custom Prompts**
+
 ```python
-question = "What did they say about MATLAB?"
-docs_tfidf = tfidf_retriever.get_relevant_documents(question)
-print(docs_tfidf[0].page_content[:200])
+from langchain.prompts import PromptTemplate
+
+# Custom prompt template
+template = """Use the following pieces of context to answer the question at the end.
+If you don't know the answer, just say that you don't know. Use three sentences max.
+Always say 'Thanks for asking!' at the end.
+
+{context}
+
+Question: {question}
+Helpful Answer:"""
+
+QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
+
+# Create QA chain with custom prompt
+qa_chain = RetrievalQA.from_chain_type(
+    llm,
+    retriever=vectordb.as_retriever(),
+    return_source_documents=True,
+    chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
+)
+
+# Query the new QA chain
+question = "Is probability a class topic?"
+result = qa_chain({"query": question})
+
+print(result["result"])
 ```
-```plaintext
-"Saxena and Min Sun here did, which is given an image like this, right? This is actually a v\npicture..."
+
+#### 🖥 **Console Output**
+```
+'Yes, probability is a class topic as the instructor assumes familiarity with
+basic probability and statistics. Thanks for asking!'
 ```
 
-## 🚀 **Conclusion**
+## 📌 **Exploring Advanced Retrieval Techniques**
 
-This section explores **advanced retrieval strategies**, showcasing their advantages and limitations. We examined:
+LangChain supports different **retrieval chain types**, which impact how retrieved documents are processed before being passed to the LLM. These include:
 
-- **Basic similarity search** and its drawbacks.
-- **MMR for more diverse retrieval results**.
-- **Metadata filtering for precise contextual search**.
-- **Compression-based retrieval** to refine document outputs.
-- **SVM and TF-IDF retrieval** as alternative approaches.
+- **Map-Reduce**: Processes each document independently and then combines results.
+- **Refine**: Iteratively refines the response across multiple chunks.
+- **Map-Rerank**: Scores retrieved documents and selects the highest-ranked one.
 
-By implementing these techniques, we **enhance retrieval performance** and improve the quality of answers returned by the LLM.
+The diagram below illustrates these techniques:
+
+![Retrieval Techniques](images/L5-techniques.png)
+
+### **Using `map_reduce` Retrieval**
+
+```python
+qa_chain_mr = RetrievalQA.from_chain_type(
+    llm,
+    retriever=vectordb.as_retriever(),
+    chain_type="map_reduce"
+)
+result = qa_chain_mr({"query": question})
+print(result["result"])
+```
+
+#### 🖥 **Console Output**
+```
+'Yes, probability is a class topic in the document.'
+```
+
+### **Using `refine` Retrieval**
+
+```python
+qa_chain_refine = RetrievalQA.from_chain_type(
+    llm,
+    retriever=vectordb.as_retriever(),
+    chain_type="refine"
+)
+result = qa_chain_refine({"query": question})
+print(result["result"])
+```
+
+#### 🖥 **Console Output**
+```
+'The original answer already provides a comprehensive explanation of how
+probability is a class topic, including examples of class applications.
+The refined response does not significantly alter the original answer.'
+```
+
+## 🔥 **Key Takeaways**
+
+✅ **Retrieval-based QA** improves LLM responses by providing relevant context.  
+✅ **Chroma vector store** enables efficient similarity-based document retrieval.  
+✅ **Alternative retrieval methods** (`map_reduce`, `refine`, `map_rerank`) impact response quality.  
+✅ **Custom prompt engineering** can tailor responses to be more concise and user-friendly.  
