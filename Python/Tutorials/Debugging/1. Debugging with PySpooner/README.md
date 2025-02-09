@@ -1,7 +1,7 @@
 # 🐍 **Debugging with PySnooper**
 
 ## 📌 **Overview**
-PySnooper is a **lightweight debugging tool** for Python that provides detailed logging of function execution. It tracks **variable changes**, **execution flow**, and **function calls** without modifying the original code.
+[PySnooper](https://github.com/cool-RR/PySnooper) is a **lightweight debugging tool** for Python that provides detailed logging of function execution. It tracks **variable changes**, **execution flow**, and **function calls** without modifying the original code.
 
 This guide explains how to install PySnooper and use it to debug a simple function.
 
