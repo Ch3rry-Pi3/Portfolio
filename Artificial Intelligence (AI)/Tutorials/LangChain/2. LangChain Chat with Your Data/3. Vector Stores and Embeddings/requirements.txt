@@ -1,0 +1,9 @@
+openai
+python-dotenv
+langchain 
+langchain-openai
+pypdf
+yt_dlp
+pydub
+chromadb
+numpy

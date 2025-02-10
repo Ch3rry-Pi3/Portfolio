@@ -1,0 +1,12 @@
+openai
+langchain
+chromadb
+umap-learn
+matplotlib
+pypdf
+python-dotenv
+numpy
+pandas
+psutil
+platformdirs
+sentence_transformers
