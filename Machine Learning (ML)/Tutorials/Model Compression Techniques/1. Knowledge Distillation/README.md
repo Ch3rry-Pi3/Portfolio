@@ -30,9 +30,9 @@ $$
 
 where:
 - $$P(x)$$ represents the probability distribution from the **Teacher Model**.
-- *Q(x)* represents the probability distribution from the **Student Model**.
+- $$Q(x)$$ represents the probability distribution from the **Student Model**.
 
-If *P(x)* and *Q(x)* are identical, KL divergence equals **0**, meaning **no information is lost**.
+If $$P(x)$$ and $$Q(x)$$ are identical, KL divergence equals **0**, meaning **no information is lost**.
 
 ## 🏗 Implementation Steps
 
