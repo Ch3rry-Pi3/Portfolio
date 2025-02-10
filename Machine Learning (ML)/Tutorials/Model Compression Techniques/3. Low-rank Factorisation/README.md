@@ -13,7 +13,7 @@ We specifically use **Singular Value Decomposition (SVD)** to achieve this facto
 
 ![Singular Value Decomposition](images/svd.png)
 
-(Images from [Daily Dose of Data Science]('https://www.dailydoseofds.com/model-compression-a-critical-step-towards-efficient-machine-learning/'))
+(Images from [Daily Dose of Data Science](https://www.dailydoseofds.com/model-compression-a-critical-step-towards-efficient-machine-learning/))
 
 ## 🔬 How Low-Rank Factorization Works
 

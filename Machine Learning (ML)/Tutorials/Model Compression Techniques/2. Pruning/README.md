@@ -19,7 +19,7 @@ Below are two conceptual illustrations of pruning:
 
    ![Neural Network Pruning](images/nn.png)
 
-(Images from [Daily Dose of Data Science]('https://www.dailydoseofds.com/model-compression-a-critical-step-towards-efficient-machine-learning/'))
+(Images from [Daily Dose of Data Science](https://www.dailydoseofds.com/model-compression-a-critical-step-towards-efficient-machine-learning/))
 
 ## 🧹 Zero Pruning
 
