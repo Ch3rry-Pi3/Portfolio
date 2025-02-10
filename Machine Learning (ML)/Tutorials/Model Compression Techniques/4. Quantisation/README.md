@@ -1,4 +1,4 @@
-# ⚡ Model Quantisation for Efficient Inference
+# ⚡ Model Quantisation for Model Compression
 
 ## 🔍 Overview
 
