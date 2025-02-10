@@ -29,7 +29,7 @@ D_{KL}(P \parallel Q) = \sum_x P(x) \cdot \log \left( \frac{P(x)}{Q(x)} \right)
 $$
 
 where:
-- *P(x)* represents the probability distribution from the **Teacher Model**.
+- $$P(x)$$ represents the probability distribution from the **Teacher Model**.
 - *Q(x)* represents the probability distribution from the **Student Model**.
 
 If *P(x)* and *Q(x)* are identical, KL divergence equals **0**, meaning **no information is lost**.
