@@ -17,8 +17,8 @@ We specifically use **Singular Value Decomposition (SVD)** to achieve this facto
 
 ## 🔬 How Low-Rank Factorization Works
 
-- **Matrix Decomposition**: We apply **Singular Value Decomposition (SVD)** on weight matrices to break them into three components: \( U, S, V \).
-- **Truncation**: Only the top \( k \) singular values are retained, where \( k \) is the **rank threshold**.
+- **Matrix Decomposition**: We apply **Singular Value Decomposition (SVD)** on weight matrices to break them into three components: $$ U, S, V $$.
+- **Truncation**: Only the top  $$k$$$$ singular values are retained, where $$k$$ is the **rank threshold**.
 - **Reconstruction**: The original weight matrix is approximated using the retained components, resulting in a **compressed model**.
 
 ## 📊 Performance Results
