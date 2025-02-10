@@ -18,7 +18,7 @@ In this implementation, we specifically use **Response-Based Knowledge Distillat
 
 ![Response-Based Knowledge Distillation](images/response_based.png)
 
-(Images from[Daily Dose of Data Science]('https://www.dailydoseofds.com/model-compression-a-critical-step-towards-efficient-machine-learning/'))
+(Images from [Daily Dose of Data Science]('https://www.dailydoseofds.com/model-compression-a-critical-step-towards-efficient-machine-learning/'))
 
 ## ✏️ KL Divergence: The Loss Function
 
