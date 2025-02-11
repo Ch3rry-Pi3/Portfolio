@@ -119,7 +119,7 @@ moves = [[0,0],[1,1],[0,1],[0,2],[1,0],[2,0]]
 "B"
 ```
 #### **Explanation:**
-- Player B wins by completing a **column**.
+- Player B wins by completing the **anti-diagonal**.
 
 <img src="images/example2.jpg" alt="Example 2" width="300"/>
 
