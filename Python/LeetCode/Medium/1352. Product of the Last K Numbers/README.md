@@ -4,7 +4,7 @@
 Design an algorithm that accepts a stream of integers and retrieves the **product** of the **last k** integers of the stream efficiently.
 
 You need to implement the `ProductOfNumbers` class with the following methods:
-- `ProductOfNumbers()`: Initializes an object with an empty stream.
+- `ProductOfNumbers()`: Initialises an object with an empty stream.
 - `void add(int num)`: Appends the integer `num` to the stream.
 - `int getProduct(int k)`: Returns the product of the last `k` numbers in the stream.
 
