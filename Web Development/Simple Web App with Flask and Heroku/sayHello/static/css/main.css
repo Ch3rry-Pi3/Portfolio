@@ -1,0 +1,93 @@
+/*
+  Filename: styles.css
+  Author: [Roger J. Campbell]
+  Date: [2025-02-17]
+  Description: This stylesheet provides the styling for the webpage,
+               including layout, typography, and interactive elements.
+*/
+
+/* 
+  General body styling: 
+  - Centers text
+  - Sets background color to SlateGrey
+*/
+body {
+    text-align: center;
+    background-color: SlateGrey;
+}
+
+/* 
+  Paragraph styling:
+  - Sets text color to white
+  - Uses 'Shanti' font
+  - Increases font size to 1.2em
+  - Ensures inline-block display
+  - Adds 20px margin for spacing
+*/
+p {
+    color: white;
+    font-family: Shanti, sans-serif;
+    font-size: 1.2em;
+    display: inline-block;
+    margin: 20px;
+}
+
+/* 
+  Image styling:
+  - Adds top and bottom margins for spacing
+  - Sets a fixed width of 250px
+*/
+img {
+    margin: 60px 0 30px 0;
+    width: 250px;
+}
+
+/* 
+  Input field styling:
+  - Sets width and height for a balanced appearance
+  - Adds rounded corners (border-radius)
+  - Uses 'Shanti' font for consistency
+  - Centers text inside the input field
+*/
+input {
+    width: 300px;
+    margin: 20px 20px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-family: Shanti, sans-serif;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+/* 
+  Focus state for input fields:
+  - Removes default outline
+  - Adds a solid 5px border with a cyan color (#00FFCE)
+*/
+input:focus {
+    outline: none;
+    border: solid 5px #00FFCE;
+}
+
+/* 
+  Greeting button styling (#greet):
+  - Sets background color to PaleVioletRed
+  - Removes border
+  - Sets width to 200px
+  - Sets text color to white
+*/
+#greet {
+    background-color: PaleVioletRed;
+    border: none;
+    width: 200px;
+    color: white;
+}
+
+/* 
+  Hover effect for #greet button:
+  - Changes background color to MediumVioletRed when hovered
+*/
+#greet:hover {
+    background-color: MediumVioletRed;
+}

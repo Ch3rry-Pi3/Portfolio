@@ -1,0 +1,47 @@
+<!--
+    Filename: index.html
+    Author: [Roger J. Campbell]
+    Date: [2025-02-17]
+    Description: This HTML file provides a simple user interface for the Flask 
+                 greeting application. It includes an input field for the user's name, 
+                 a submit button, and a section to display flash messages.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Say Hello</title>
+
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+    <!-- Logo for the application -->
+    <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png" alt="App Logo">
+    <br>
+
+    <!-- Form to accept user's name and submit it to the /greet route -->
+    <form action="greet" method="post">
+
+        <!-- Loop through and display flashed messages (e.g., greeting messages) -->
+        {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+        {% endfor %}
+
+        <br>
+
+        <!-- Input field for user to enter their name -->
+        <input type="text" name="name_input" placeholder="Enter your name">
+        <br>
+
+        <!-- Submit button to send data to the /greet route -->
+        <input type="submit" value="GREET" id="greet">
+
+    </form>
+
+</body>
+</html>
