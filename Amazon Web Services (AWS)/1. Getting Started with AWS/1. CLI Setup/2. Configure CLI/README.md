@@ -15,7 +15,7 @@ To generate access keys, navigate to the **Identity and Access Management (IAM)*
 - In the **Access management** dropdown on the left-hand menu, select **Users**.
 
 🖼️ **IAM Users Page:**  
-![IAM Users](images/user.jpg)
+![IAM Users](images/users.jpg)
 
 - Select a user to set up an access key for.
 - In the user’s page, click the **Security credentials** tab.
