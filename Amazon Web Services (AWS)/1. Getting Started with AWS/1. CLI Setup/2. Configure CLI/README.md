@@ -38,7 +38,7 @@ To generate access keys, navigate to the **Identity and Access Management (IAM)*
 🖼️ **Step 1 - Best Practices & Alternatives:**  
 ![Step 1](images/step1.jpg)
 
-- In **Step 2: Set description tag**, enter an optional description and click **Next**.
+- In **Step 2: Set description tag**, enter an optional description and click **Create access key**.
 
 🖼️ **Step 2 - Set Description Tag:**  
 ![Step 2](images/step2.jpg)
