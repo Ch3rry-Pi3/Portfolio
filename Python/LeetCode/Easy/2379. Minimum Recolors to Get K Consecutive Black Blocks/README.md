@@ -104,7 +104,6 @@ class Solution:
                 left += 1       # Move left pointer
 
         return num_recolors
-
 ```
 
 ## ⏳ **Time Complexity Analysis**  
