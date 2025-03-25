@@ -1,8 +1,12 @@
+Perfect! Based on the style of your reference README and the information from the diagrams, here’s a beautifully formatted and professional README for your **Matrix–Vector Dot Product** function, incorporating both intuitive explanation and mathematical formulation:
+
+---
+
 # 🧮 **Matrix–Vector Dot Product**
 
 ## 📌 **Overview**
 
-This project implements a **Matrix–Vector Dot Product** calculator in Python. It multiplies a matrix $ A $ (2D list) with a vector $ v $ (1D list) using the rules of **linear algebra**, returning the resulting vector. If the dimensions are incompatible, the function safely returns **-1**.
+This project implements a **Matrix–Vector Dot Product** calculator in Python. It multiplies a matrix \( A \) (2D list) with a vector \( v \) (1D list) using the rules of **linear algebra**, returning the resulting vector. If the dimensions are incompatible, the function safely returns **-1**.
 
 > ✅ Clean implementation  
 > ✅ Full type annotations  
@@ -12,9 +16,9 @@ This project implements a **Matrix–Vector Dot Product** calculator in Python. 
 
 ## 📖 **Problem Statement**
 
-Given a **matrix** $ A \in \mathbb{R}^{n \times m} $ and a **vector** $ v \in \mathbb{R}^m $, compute their **dot product**:
+Given a **matrix** \( A \in \mathbb{R}^{n \times m} \) and a **vector** \( v \in \mathbb{R}^m \), compute their **dot product**:
 
-$$
+\[
 A \cdot v = \begin{bmatrix}
 a_{11} & a_{12} & \cdots & a_{1m} \\
 a_{21} & a_{22} & \cdots & a_{2m} \\
@@ -35,7 +39,7 @@ v_m
 \vdots \\
 \sum_{i=1}^m a_{ni} v_i
 \end{bmatrix}
-$$
+\]
 
 ### 🔑 **Key Requirement**
 
@@ -50,11 +54,11 @@ If this condition is **not met**, the function returns `-1` to signal the mismat
 
 Each **row** of the matrix is **dotted** with the vector using the formula:
 
-$$
+\[
 \text{Result}[i] = \sum_{j=1}^m A[i][j] \cdot v[j]
-$$
+\]
 
-This produces a **new vector of length $ n $**, where $ n $ is the number of rows in the matrix.
+This produces a **new vector of length \( n \)**, where \( n \) is the number of rows in the matrix.
 
 ### ❌ **Invalid Case**
 
@@ -73,8 +77,8 @@ b = [1, 2]
 
 ### ➕ **Calculation**
 
-- Row 1: $ (1 \cdot 1) + (2 \cdot 2) = 1 + 4 = 5 $
-- Row 2: $ (2 \cdot 1) + (4 \cdot 2) = 2 + 8 = 10 $
+- Row 1: \( (1 \cdot 1) + (2 \cdot 2) = 1 + 4 = 5 \)
+- Row 2: \( (2 \cdot 1) + (4 \cdot 2) = 2 + 8 = 10 \)
 
 ### ✅ Output:
 
@@ -159,18 +163,18 @@ if __name__ == "__main__":
 
 | Operation                  | Complexity |
 |---------------------------|------------|
-| **Time Complexity**       | $ O(n \cdot m) $ |
-| **Space Complexity**      | $ O(n) $         |
+| **Time Complexity**       | \( O(n \cdot m) \) |
+| **Space Complexity**      | \( O(n) \)         |
 
-- Where $ n $ = number of rows, and $ m $ = number of columns.
-- One dot product per row → $ n $ dot products, each of size $ m $.
+- Where \( n \) = number of rows, and \( m \) = number of columns.
+- One dot product per row → \( n \) dot products, each of size \( m \).
 
 ---
 
 ## 🏗 **Project Structure**
 
 ```
-1. Matrix-Vector Dot Product/
+matrix_dot_vector/
 ├── main.py      # Matrix–Vector dot product function and test cases
 ├── README.md    # Problem description, mathematical explanation, and usage
 ```
@@ -185,3 +189,5 @@ if __name__ == "__main__":
 ---
 
 ✅ **Master foundational linear algebra in code with this practical and intuitive example!**
+
+Let me know if you'd like this exported into a `.md` file or adapted for a Jupyter notebook!
