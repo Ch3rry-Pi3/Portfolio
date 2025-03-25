@@ -18,7 +18,7 @@ This project implements a **Matrix–Vector Dot Product** calculator in Python. 
 
 Given a **matrix** \( A \in \mathbb{R}^{n \times m} \) and a **vector** \( v \in \mathbb{R}^m \), compute their **dot product**:
 
-\[
+$$
 A \cdot v = \begin{bmatrix}
 a_{11} & a_{12} & \cdots & a_{1m} \\
 a_{21} & a_{22} & \cdots & a_{2m} \\
@@ -39,7 +39,7 @@ v_m
 \vdots \\
 \sum_{i=1}^m a_{ni} v_i
 \end{bmatrix}
-\]
+$$
 
 ### 🔑 **Key Requirement**
 
