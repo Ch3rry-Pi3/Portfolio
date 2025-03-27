@@ -92,29 +92,6 @@ class Solution:
 
         return result
 ```
-
-
-
-## ▶️ Main Function for Testing
-
-```python
-def main():
-    solution = Solution()
-    test_cases = [
-        ([[2, 4], [6, 8]], 2),
-        ([[1, 5], [2, 3]], 1),
-        ([[1, 2], [3, 4]], 2),
-        ([[1, 1, 1], [1, 1, 1]], 1),
-    ]
-    for grid, x in test_cases:
-        print(f"Grid: {grid}, x: {x} -> Output: {solution.minOperations(grid, x)}")
-
-if __name__ == "__main__":
-    main()
-```
-
-
-
 ## ⏱️ Time & Space Complexity
 
 | Metric             | Complexity      |
