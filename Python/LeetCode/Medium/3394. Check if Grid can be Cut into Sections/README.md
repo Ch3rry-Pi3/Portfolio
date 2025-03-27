@@ -123,7 +123,7 @@ class Solution:
 ## 📂 File Structure
 
 ```
-cut_grid_sections/
+3394. Check if Grid Can Be Cut into Sections/
 ├── main.py       # Python implementation
 ├── README.md     # Problem explanation, examples, intuition
 ```
