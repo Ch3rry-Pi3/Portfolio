@@ -89,7 +89,7 @@ def find_valid_serial_products(products: pd.DataFrame) -> pd.DataFrame:
 ## 📂 **Project Structure**  
 
 ```
-find_valid_serial_numbers/
+3465. Find Products with Valid Serial Numbers/
 ├── main.py       # Python solution with example usage
 ├── README.md      # Problem description and explanation
 ```
