@@ -11,7 +11,7 @@ Using the **SDLC** can **improve efficiency** and **reduce risks** by:
 - Allowing stakeholders to understand **their role** in the process.  
 - Enabling **cross-domain teams** to know when to **move to the next phase**.  
 
----
+
 
 ## 🔧 **Software Engineering Processes**  
 Common processes include:  
@@ -29,28 +29,28 @@ Common processes include:
 4. **Document requirements**  
 5. **Analyze, prioritize, and confirm requirements**  
 
----
+
 
 ## 📑 **Key Documents:**  
 - **SRS (Software Requirements Specification):** Details software functionalities and performance benchmarks.  
 - **URS (User Requirements Specification):** A subset of SRS focusing on **user needs**.  
 - **SysRS (System Requirements Specification):** Combines SRS details with **system capabilities, interfaces, user characteristics**, and **regulation requirements**.  
 
----
+
 
 ## 🗺️ **Development Methodologies:**  
 1. **Waterfall:** Linear and sequential approach.  
 2. **V-Shape Model:** Verification and validation at each stage.  
 3. **Agile:** Iterative and flexible, promotes continuous delivery and feedback.  
 
----
+
 
 ## 🧪 **Types of Testing:**  
 - **Functional Testing:** Ensures the system's **inputs and outputs** are correct.  
 - **Non-Functional Testing:** Evaluates **performance, security, scalability, availability**.  
 - **Regression Testing:** Confirms that recent changes do not negatively impact existing functionality.  
 
----
+
 
 ## 📝 **Documentation Types:**  
 1. **Requirements Documentation:** Captures user needs.  
@@ -59,7 +59,7 @@ Common processes include:
 4. **Quality Assurance Documentation:** Test plans and cases.  
 5. **User Documentation:** Guides for using the software.  
 
----
+
 
 ## 👥 **Roles in Software Engineering Projects:**  
 - **Project Manager / Scrum Master:** Coordinates the project.  
@@ -72,7 +72,7 @@ Common processes include:
 - **Product Manager / Owner:** Defines the product vision.  
 - **Technical Writer / Information Developer:** Creates documentation.  
 
----
+
 
 ## 🚀 **Key Takeaways:**  
 - **Software engineering** integrates **scientific principles** into software creation.  
