@@ -35,9 +35,9 @@ def main():
 
     # Example cases from LeetCode
     test_cases = [
-        ([2, 7, 11, 15], 9),    # Expected output: [0,1]
-        ([3, 2, 4], 6),         # Expected output: [1,2]
-        ([3, 3], 6)             # Expected output: [0,1]
+        ([2, 7, 11, 15], 9),     # Expected output: [0,1]
+        ([3, 2, 4], 6),          # Expected output: [1,2]
+        ([3, 3], 6)              # Expected output: [0,1]
     ]
 
     for nums, target in test_cases:
