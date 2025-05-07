@@ -16,7 +16,13 @@ Components:
 
 > The control plane is the brain — it manages decisions and stores the desired state.
 
+## 📊 Control Plane and Data Plane Overview
 
+![Control Plane and Data Plane](images/Control_and_data_plane.png)
+
+The diagram above shows how the control plane and data plane work together:
+- The control plane makes scheduling and management decisions.
+- The data plane executes those decisions by running the application pods on worker nodes.
 
 ## 🏗️ What is the Data Plane?
 
@@ -32,7 +38,6 @@ Components:
 ### 🎯 **Summary:**
 
 > The data plane runs your workloads → pods → containers → your apps.
-
 
 ## 🚦 Big picture view:
 
