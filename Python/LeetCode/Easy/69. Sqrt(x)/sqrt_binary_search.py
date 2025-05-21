@@ -1,6 +1,6 @@
 class Solution:
     """
-    This class provides an implementation of the square root function using binary search.
+    Provides an implementation of the square root function using binary search.
     The function computes the integer square root of a given non-negative integer x.
     """
 
