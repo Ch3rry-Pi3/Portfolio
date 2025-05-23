@@ -1,7 +1,7 @@
 class Solution:
     """
     Provides an implementation of the square root function using binary search.
-    The function computes the integer square root of a given non-negative integer x.
+    Computes the integer square root of a given non-negative integer x.
     """
 
     def mySqrt(self, x: int) -> int:
