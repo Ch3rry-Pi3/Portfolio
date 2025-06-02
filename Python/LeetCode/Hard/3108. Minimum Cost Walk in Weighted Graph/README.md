@@ -74,7 +74,7 @@ from typing import List
 class Solution:
     def __init__(self):
         """
-        Initializes the solution with parent and depth arrays.
+        Initialises the solution with parent and depth arrays.
         - `parent`: Tracks the representative (root) of each node's connected component.
         - `depth`: Stores the depth of each connected component to optimize union operations.
         """
