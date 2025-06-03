@@ -94,9 +94,9 @@ class Solution:
                         - `t` is the end vertex.
         :return: A list of integers where each value is the minimum cost for the respective query.
         """
-        self.parent = [-1] * n  # Initially, each node is its own parent (disjoint set)
-        self.depth = [0] * n  # Tracks the depth of each component
-        component_cost = [-1] * n  # Tracks the bitwise AND cost for each component
+        self.parent = [-1] * n          # Initially, each node is its own parent (disjoint set)
+        self.depth = [0] * n            # Tracks the depth of each component
+        component_cost = [-1] * n       # Tracks the bitwise AND cost for each component
 
         # Step 1: Union-Find to connect components
         for u, v, _ in edges:
@@ -149,12 +149,12 @@ class Solution:
 
         # Union by rank (depth)
         if self.depth[root1] < self.depth[root2]:
-            root1, root2 = root2, root1  # Swap to ensure root1 is deeper
+            root1, root2 = root2, root1     # Swap to ensure root1 is deeper
 
-        self.parent[root2] = root1  # Merge root2 into root1
+        self.parent[root2] = root1          # Merge root2 into root1
 
         if self.depth[root1] == self.depth[root2]:
-            self.depth[root1] += 1  # Increment depth if both were equal
+            self.depth[root1] += 1          # Increment depth if both were equal
 
 ```
 
