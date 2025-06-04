@@ -145,7 +145,7 @@ class Solution:
         root2 = self._find(node2)
 
         if root1 == root2:
-            return  # Already in the same component
+            return                          # Already in the same component
 
         # Union by rank (depth)
         if self.depth[root1] < self.depth[root2]:
