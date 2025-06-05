@@ -76,7 +76,7 @@ class Solution:
         """
         Initialises the solution with parent and depth arrays.
         - `parent`: Tracks the representative (root) of each node's connected component.
-        - `depth`: Stores the depth of each connected component to optimize union operations.
+        - `depth`: Stores the depth of each connected component to optimise union operations.
         """
         self.parent = []
         self.depth = []
@@ -162,7 +162,7 @@ class Solution:
 
 | Operation | Complexity |
 |-----------|------------|
-| **Union-Find Initialization** | **O(n)** ✅ |
+| **Union-Find Initialisation** | **O(n)** ✅ |
 | **Union & Find Operations (Path Compression)** | **O(α(n)) ≈ O(1)** ✅ |
 | **Bitwise AND Computation** | **O(m)** ✅ |
 | **Query Processing** | **O(q)** ✅ |
@@ -174,7 +174,7 @@ class Solution:
 
 ## 🎯 **Key Takeaways**  
 ✔ **Union-Find (DSU) is powerful** for handling connectivity in graphs.  
-✔ **Path compression + rank optimization** ensures optimal performance.  
+✔ **Path compression + rank optimisation** ensures optimal performance.  
 ✔ **Precomputing bitwise AND per component** makes queries **fast**.  
 
 🚀 **Master this approach for graph-related problems!** 🔥
