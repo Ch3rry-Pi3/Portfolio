@@ -27,7 +27,7 @@ The table below summarises the time complexities of common operations performed 
 ### 📌 Dynamic Array (Python List)
 
 ```python
-# Initialize a dynamic array
+# Initialise a dynamic array
 A = [1, 2, 3]
 print("Initial List:", A)
 
