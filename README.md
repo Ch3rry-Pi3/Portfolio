@@ -9,4 +9,4 @@ This is my digital playground 🎮 for all things **Computer Science, AI, Data S
 🔹 **`JavaScript`** – Scripting the web with dynamic and interactive magic ✨💻  
 🔹 **`Python`** – The Swiss army knife of programming 🐍🔬  
 
-💡 **More projects coming soon!** I’m building towards a future where **Ch3rry Pi3** becomes a powerhouse learning about and implementing solutions for AI, automation, and next-gen tech 🍒🚀.  
+💡 **More projects coming soon!** I’m building towards a future where **Ch3rry Pi3** becomes a powerhouse learning about and implementing solutions for AI, automation, econometrics, discrete optimisation, and next-gen tech 🍒🚀.  
