@@ -2,7 +2,7 @@
 
 This is my digital playground 🎮 for all things **Computer Science, AI, Data Science, econometrics, and End-to-End Machine Learning** 🤖📊. Here, we build, break, and optimise **algorithms, models, and full-stack ML applications** to push the boundaries of what is possible.  
 
-### 📂 **What's Inside?**  
+### 📂 **What's Inside this Portfolio?**  
 🔹 **`AI`** – Deep dives into neural networks, transformers, and cutting-edge models 🧠💡  
 🔹 **`C Programming`** – Mastering the foundations of low-level programming 🏗️🔢  
 🔹 **`Docker`** – Containerising the future one app at a time 🐳🚢  
